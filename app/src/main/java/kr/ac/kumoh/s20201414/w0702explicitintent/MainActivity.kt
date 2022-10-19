@@ -22,7 +22,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.btnImplicitIntent.setOnClickListener{
-            val uri = Uri.parse("https://www.youtube.com/results?search_query=" + binding.btnEditText.text)
+            val uri = Uri.parse("https://www.youtube.com/results?search_query=${binding.editText.text}")
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent)
         }
     }
 }
